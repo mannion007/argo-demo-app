@@ -1,0 +1,29 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: my-redis
+  labels:
+    app: my-redis
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: my-redis
+      env: prod
+  template:
+    metadata:
+      labels:
+        app: my-redis
+        env: prod
+    spec:
+      containers:
+      - name: my-redis
+        image: redis:7.0.4-alpine
+        resources:
+          limits:
+            memory: "64Mi"
+            cpu: "250m"
+        ports:
+          - name: redis-default
+            containerPort: 6379
+            protocol: TCP

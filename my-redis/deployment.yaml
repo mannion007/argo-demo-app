@@ -18,7 +18,7 @@ spec:
     spec:
       containers:
       - name: my-redis
-        image: redis:6.2.7
+        image: redis:7.0.4
         resources:
           limits:
             memory: "64Mi"

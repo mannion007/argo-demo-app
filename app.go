@@ -1,10 +1,14 @@
 package main
 
-import "fmt"
+import (
+    "fmt"
+    "time"
+)
 
 func main() {
-	fmt.Printf("Starting server at port 8080\n")
-    if err := http.ListenAndServe(":8080", nil); err != nil {
-        log.Fatal(err)
+    for {
+        fmt.Printf("hello world\n")
+
+        time.Sleep(5 * time.Second)
     }
 }

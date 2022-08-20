@@ -41,6 +41,8 @@ jobs:
           uses: docker/metadata-action@v4
           with:
               images: mannionjames/hello-argo
+              tags: |
+                type=sha
 
         - name: build and push
           uses: docker/build-push-action@v3

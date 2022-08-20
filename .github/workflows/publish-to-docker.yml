@@ -36,6 +36,12 @@ jobs:
               username: ${{ secrets.DOCKER_USERNAME }}
               password: ${{ secrets.DOCKER_PASSWORD }}
 
+        - name: extract metadata (tags, labels) for docker
+          id: meta
+          uses: docker/metadata-action@v4
+          with:
+              images: mannionjames/hello-argo
+
         - name: build and push
           uses: docker/build-push-action@v3
           with:

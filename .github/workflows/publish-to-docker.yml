@@ -28,7 +28,7 @@ jobs:
             go-version: '1.19.0'
 
         - name: build executable
-          run: go build .
+          run: go build app.go
 
         - name: vet & lint
           run: |

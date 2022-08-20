@@ -30,11 +30,6 @@ jobs:
         - name: build executable
           run: go build app.go
 
-        - name: vet & lint
-          run: |
-            go vet .
-            golint .
-
     push_to_registry:
         name: push to registry
         runs-on: ubuntu-latest

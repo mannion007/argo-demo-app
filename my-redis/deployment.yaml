@@ -16,7 +16,7 @@ spec:
     spec:
       containers:
       - name: hello-argo
-        image: mannionjames/hello-argo:master
+        image: mannionjames/hello-argo
         resources:
           limits:
             memory: "64Mi"

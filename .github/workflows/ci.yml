@@ -1,13 +1,4 @@
-# This workflow uses actions that are not certified by GitHub.
-# They are provided by a third-party and are governed by
-# separate terms of service, privacy policy, and support
-# documentation.
-
-# GitHub recommends pinning actions to a commit SHA.
-# To get a newer version, you will need to update the SHA.
-# You can also reference a tag or branch, but the action may change without warning.
-
-name: CICD
+name: argo demo app
 
 on:
     push:
@@ -26,6 +17,9 @@ jobs:
           uses: actions/setup-go@v2
           with:
             go-version: '1.19.0'
+
+        - name: vet application
+          run: go vet
 
         - name: build executable
           run: go build app.go
